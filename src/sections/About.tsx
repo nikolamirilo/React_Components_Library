@@ -8,13 +8,9 @@ const About: React.FC = () => {
     <section id="about">
       <div className="content">
         <p>
-          When looking at an unfinished design — whether it's a web graphic, newspaper, or magazine layout — the content
-          will always draw people's attention. Instead of using repeating English text, like the words "Sample Text,
-          Sample Text…" over and over, Lorem Ipsum uses a variety of words, with different lengths that reflect how
-          writing actually looks. However, many versions of today's Lorem Ipsum text are altered to be randomized, so
-          that text doesn't repeat as often. They may also employ a humorous take on Latin words, turning them into
-          made-up English versions. Popular applications like Wordpress, Google Docs, and Microsoft Word all have
-          built-in Lorem Ipsum features
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corrupti itaque iusto, nostrum praesentium excepturi
+          magni error fuga tenetur incidunt natus eius exercitationem, nam ipsa. Autem nisi doloremque minus molestiae
+          quia!
         </p>
       </div>
       <div className="image">

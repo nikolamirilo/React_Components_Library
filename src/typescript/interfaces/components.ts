@@ -13,6 +13,10 @@ export interface CarouselProps {
   handlePreviousSlide: React.MouseEventHandler<HTMLButtonElement>;
   handleNextSlide: React.MouseEventHandler<HTMLButtonElement>;
 }
+export interface AuthFormProps {
+  type: string;
+  handleSubmitForm(): void;
+}
 export interface FormProps {}
 export interface OfferCardProps {
   type: string;

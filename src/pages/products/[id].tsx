@@ -1,3 +1,4 @@
+import { SingleProductProps } from "@/typescript/interfaces/pages";
 import { GetServerSidePropsContext } from "next";
 import React from "react";
 
@@ -12,7 +13,7 @@ export async function getServerSideProps(context: GetServerSidePropsContext) {
     },
   };
 }
-const SingleProduct: React.FC = ({ singleProduct }) => {
+const SingleProduct: React.FC<SingleProductProps> = ({ singleProduct }) => {
   console.log(singleProduct);
   return (
     <main id="single-product">

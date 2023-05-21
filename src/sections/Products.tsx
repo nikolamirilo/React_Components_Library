@@ -2,7 +2,7 @@ import Card from "@/components/Card";
 import { ProductsProps } from "@/typescript/interfaces/sections";
 import React from "react";
 
-const Products: React.FC<ProductsProps> = ({ data, type, isLoading }) => {
+const Products: React.FC<ProductsProps> = ({ data, isLoading }) => {
   if (isLoading) {
     return <h1>Loading...</h1>;
   } else {

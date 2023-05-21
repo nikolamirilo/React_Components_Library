@@ -45,20 +45,9 @@ const Form: React.FC<FormProps> = () => {
       <form className="left-content" ref={form} onSubmit={handleFormSubmit}>
         <h1>Contact Us</h1>
         <input type="text" id="nameInput" placeholder="Enter name" name="name" required={true} />
-        <input
-          type="email"
-          id="emailInput"
-          placeholder="Enter address"
-          name="email"
-          required={true}
-        />
+        <input type="email" id="emailInput" placeholder="Enter address" name="email" required={true} />
         <input type="text" id="subjectInput" placeholder="Subject" name="subject" required={true} />
-        <textarea
-          id="messageInput"
-          required={true}
-          name="message"
-          placeholder="Enter Message"
-        ></textarea>
+        <textarea id="messageInput" required={true} name="message" placeholder="Enter Message"></textarea>
         <button type="submit">Pošalji</button>
       </form>
       <div className="right-content">

@@ -1,12 +1,11 @@
 import clientPromise from "@/lib/mongodb";
+import { ObjectId } from "mongodb";
 
 export const getAllProducts = async () => {
   try {
     const client = await clientPromise;
     const db = client.db("Used_Cars");
-    const allProducts = (await db.collection("products").find({}).toArray()).sort(
-      (a, b) => a.id - b.id
-    );
+    const allProducts = (await db.collection("products").find({}).toArray()).sort((a, b) => a.id - b.id);
     const length = allProducts.length;
     return { allProducts, length };
   } catch (error) {
@@ -23,17 +22,17 @@ export const deleteAllProducts = async () => {
   }
 };
 
-export const getSingleProduct = async (id: number) => {
+export const getSingleProduct = async (id: string) => {
   try {
     const { allProducts } = await getAllProducts();
-    const singleProduct = allProducts.find((singleProduct) => singleProduct._id == id);
+    const singleProduct = allProducts.find((singleProduct) => singleProduct._id.toString() === id);
     return { singleProduct };
   } catch (error) {
     console.log(error.message);
   }
 };
 
-export const addNewProduct = async (product) => {
+export const addNewProduct = async (product: object) => {
   try {
     const client = await clientPromise;
     const db = client.db("Used_Cars");
@@ -42,7 +41,7 @@ export const addNewProduct = async (product) => {
     console.log(error.message);
   }
 };
-export const deleteProduct = async (productId) => {
+export const deleteProduct = async (productId: string) => {
   try {
     const client = await clientPromise;
     const db = client.db("Used_Cars");

@@ -19,9 +19,8 @@ import useSWR from "swr";
 //   };
 // }
 
-const Home: React.FC<HomeProps> = ({}) => {
+const Home: React.FC<HomeProps> = () => {
   const { allProducts, isLoading } = useProductsContext();
-  console.log(allProducts);
   return (
     <>
       <Head>

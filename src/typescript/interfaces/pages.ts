@@ -1,13 +1,7 @@
-import { Service } from "../types/types";
+import { Product } from "../types/types";
 
-export interface HomeProps {
-  primaryServices: Service[];
-  secondaryServices: Service[];
-  locale: any;
-}
-export interface ContactProps {
-  locale: any;
-}
-export interface OfferProps {
-  locale: any;
+export interface HomeProps {}
+export interface ContactProps {}
+export interface SingleProductProps {
+  singleProduct: Product;
 }

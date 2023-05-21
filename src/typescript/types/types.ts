@@ -1,14 +1,11 @@
 import { ReactNode } from "react";
 
-export type Service = {
-  title: string;
-  subtitle: string;
-};
 export type GeneralContextProviderProps = {
   children: ReactNode;
 };
 export type Product = {
-  name: string;
+  _id: string;
+  title: string;
   description: string;
   price: string;
 };

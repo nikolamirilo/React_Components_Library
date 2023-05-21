@@ -1,13 +1,14 @@
-import { Service } from "../types/types";
+import { Product } from "../types/types";
 
 export interface ProductsProps {
-  data: Service[];
-  type: string;
+  data: {
+    allProducts: Product[];
+  };
+  isLoading: boolean;
 }
 export interface HeroProps {
   type: string;
   title: string;
-  span: string;
   subtitle: string;
   image: string;
 }

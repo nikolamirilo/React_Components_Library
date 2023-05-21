@@ -8,7 +8,7 @@ export const useProductsContext = () => {
 };
 
 export default function ProductsContextProvider({ children }: { children: React.ReactNode }) {
-  const fetcher = (...args) => fetch(...args).then((res) => res.json());
+  const fetcher = (url: any) => fetch(url).then((res) => res.json());
   const {
     data: allProducts,
     error,
