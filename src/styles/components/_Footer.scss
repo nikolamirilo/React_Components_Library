@@ -1,0 +1,55 @@
+.footer {
+  @include layoutSectionStyle;
+  @include flex(row, space-between, center);
+  height: fit-content;
+  padding: 4vh 5vw;
+  margin-top: 5vh;
+  @include media($sm) {
+    @include flex(column, center, center);
+    gap: 4vh;
+    padding: 6vh 0vw;
+  }
+  .left-content {
+    @include flex(column, center, center);
+    img {
+      width: auto;
+      height: 70px;
+    }
+  }
+  .middle-content {
+    @include flex(column, center, center);
+    gap: 2vh;
+    .email,
+    .phone {
+      @include flex(column, center, center);
+      gap: 0.5vh;
+      a {
+        color: $white;
+        font-size: $linkFS;
+      }
+      label {
+        font-size: $linkFS;
+      }
+    }
+  }
+  .right-content {
+    @include flex(column, center, center);
+    gap: 1rem;
+    p {
+      font-size: $linkFS;
+    }
+    .social-media {
+      @include flex(row, space-around, center);
+      gap: 1rem;
+      button {
+        @include buttonStyle;
+        padding: 0.5rem;
+        border-radius: 100%;
+        border: none;
+        @include flex(column, center, center);
+        font-size: 1.8rem;
+        color: $white;
+      }
+    }
+  }
+}

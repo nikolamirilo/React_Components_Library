@@ -1,0 +1,11 @@
+{
+  "name": "Products",
+  "short_name": "Products",
+  "theme_color": "#4169e1",
+  "background_color": "#4169e1",
+  "orientation": "portrait",
+  "start_url": "/",
+  "display": "standalone",
+  "description": "Naša firma je specijalizovana za pružanje usluga selidbe, transporta, i pakovanja. Svojim klijentima nudimo najpovoljnije cene uz najviši nivo profesionalizma.",
+  "icons": []
+}

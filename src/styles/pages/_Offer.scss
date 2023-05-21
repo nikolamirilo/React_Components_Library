@@ -1,0 +1,10 @@
+.offer {
+  @include fadeAnimation(0.5s, 0.1s);
+  @include flex(column, center, center);
+  @include sectionStyle;
+  .offer-cards {
+    @include flex(column, center, center);
+    width: 100%;
+    gap: 5vh;
+  }
+}

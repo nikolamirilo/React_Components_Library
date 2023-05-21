@@ -1,0 +1,72 @@
+{
+  "navbar": ["Home", "Offer", "Contact"],
+  "hero": {
+    "title": "",
+    "subtitle": ""
+  },
+  "about": {
+    "paragraph": ""
+  },
+  "services": {
+    "primary": [
+      {
+        "title": "PrimaryT1",
+        "subtitle": "PrimaryST1"
+      },
+      {
+        "title": "PrimaryT2",
+        "subtitle": "PrimaryST2"
+      },
+      {
+        "title": "PrimaryT3",
+        "subtitle": "PrimaryST3"
+      }
+    ],
+    "secondary": [
+      {
+        "title": "SecondaryT1",
+        "subtitle": "SecondaryST1"
+      },
+      {
+        "title": "SecondaryT2",
+        "subtitle": "SecondaryST2"
+      },
+      {
+        "title": "SecondaryT3",
+        "subtitle": "SecondaryST3"
+      }
+    ]
+  },
+  "offers": [
+    {
+      "title": "PrimaryT1",
+      "text": "Lorem ipsum",
+      "type": "grid"
+    },
+    {
+      "title": "PrimaryT2",
+      "text": "OfferCard2P",
+      "type": "grid-reverse"
+    },
+    {
+      "title": "PrimaryT3",
+      "text": "OfferCard3P",
+      "type": "grid"
+    },
+    {
+      "title": "SecondaryT1",
+      "text": "OfferCard4P",
+      "type": "grid-reverse"
+    },
+    {
+      "title": "SecondaryT2",
+      "text": "OfferCard5P",
+      "type": "grid"
+    },
+    {
+      "title": "SecondaryT3",
+      "text": "OfferCard6P",
+      "type": "grid-reverse"
+    }
+  ]
+}

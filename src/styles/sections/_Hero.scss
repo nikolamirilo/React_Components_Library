@@ -1,0 +1,87 @@
+#hero {
+  width: 100%;
+  min-height: 100vh;
+  height: fit-content;
+  color: $white;
+  position: relative;
+  @include contentPadding;
+  @include flex(row, flex-start, center);
+  @include media($md) {
+    @include flex(row, center, flex-start);
+    width: 100%;
+  }
+  @include media($xs) {
+    min-height: 80vh;
+  }
+  img {
+    filter: brightness(0.5);
+    object-fit: cover;
+  }
+  .hero-content {
+    position: relative;
+    bottom: 10vh;
+    @include flex(column, center, center);
+    @include fadeAnimation(0.5s, 0.6s);
+    width: 50%;
+    gap: 2vh;
+    @include media($md) {
+      @include flex(column, center, center);
+      width: 100%;
+      bottom: 4vh;
+    }
+    .title {
+      font-size: 4rem;
+      text-align: center;
+      width: 100%;
+      @include media($xs) {
+        font-size: 3.3rem;
+      }
+      span {
+        font-size: 5rem;
+        font-style: italic;
+        color: $secondary;
+        @include media($xs) {
+          font-size: 4rem;
+        }
+      }
+    }
+    .subtitle {
+      font-size: $linkFS;
+      width: 80%;
+      text-align: center;
+      font-weight: 500;
+      @include media($xxs) {
+        font-size: 1.2rem;
+        width: 96%;
+      }
+    }
+    .hero-buttons {
+      @include flex(row, center, center);
+      margin-top: 3vh;
+      gap: 1rem;
+      @include media($xs) {
+        @include flex(column, center, center);
+      }
+      a {
+        @include buttonStyle;
+        text-decoration: none;
+        width: 12rem;
+        height: 3rem;
+        text-align: center;
+        @include media($xs) {
+          width: 12rem;
+        }
+        @include flex(row, center, center);
+        color: $white;
+        border: none;
+        &:last-child {
+          background-color: transparent;
+          border: 2px solid $secondary;
+          &:hover {
+            background-color: $secondary;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,6 @@
+.home {
+  width: 100%;
+  @include fadeAnimation(0.5s, 0.1s);
+  @include flex(column, center, center);
+  gap: 5vh;
+}

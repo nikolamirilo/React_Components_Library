@@ -1,0 +1,25 @@
+.auth-form {
+  @include flex(column, center, center);
+  gap: 5vh;
+  @include boxShadow;
+  height: fit-content;
+  width: fit-content;
+  border: 1px solid $secondary;
+  border-radius: 50px 0 50px 0;
+  padding: 5%;
+  input,
+  button {
+    font-size: $linkFS;
+    padding: 5px 10px;
+    border: 1px solid $secondary;
+    border-radius: 10px 0 10px 0;
+    width: 100%;
+    &:focus {
+      outline: none;
+    }
+  }
+  button {
+    background-color: $secondary;
+    cursor: pointer;
+  }
+}

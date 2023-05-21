@@ -1,0 +1,6 @@
+#log-in,
+#sign-up {
+  @include flex(column, center, center);
+  @include sectionStyle;
+  @include fadeAnimation(0.5s, 0.1s);
+}

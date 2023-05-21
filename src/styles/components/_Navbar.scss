@@ -1,0 +1,126 @@
+.navbar {
+  @include flex(row, space-between, center);
+  @include layoutSectionStyle;
+  height: fit-content;
+  top: 0;
+  position: sticky;
+  z-index: 100;
+}
+.logo {
+  img {
+    width: auto;
+    height: 70px;
+  }
+}
+.links {
+  display: flex;
+  flex-direction: row;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.links > a,
+.links button {
+  margin: 0 1rem;
+  overflow: hidden;
+  @include linkStyle;
+  color: $white;
+  &:hover {
+    color: $secondary;
+  }
+}
+.links button {
+  background-color: transparent;
+  border: none;
+  color: $white;
+}
+
+.menu-button-container {
+  display: none;
+  height: 100%;
+  width: 30px;
+  cursor: pointer;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.menu-button,
+.menu-button::before,
+.menu-button::after {
+  display: block;
+  background-color: $white;
+  position: absolute;
+  height: 4px;
+  width: 30px;
+  transition: transform 400ms cubic-bezier(0.23, 1, 0.32, 1);
+  border-radius: 2px;
+}
+
+.menu-button::before {
+  content: "";
+  margin-top: -8px;
+}
+
+.menu-button::after {
+  content: "";
+  margin-top: 8px;
+}
+
+#open .menu-button::before {
+  margin-top: 0px;
+  transform: rotate(405deg);
+}
+
+#open .menu-button {
+  background: rgba(255, 255, 255, 0);
+}
+
+#open .menu-button::after {
+  margin-top: 0px;
+  transform: rotate(-405deg);
+}
+
+@media (max-width: $md) {
+  .menu-button-container {
+    display: flex;
+  }
+  .links {
+    position: absolute;
+    top: 0;
+    margin-top: 80px;
+    left: 0;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+  }
+  #closed ~ .links a,
+  #closed ~ .links button {
+    height: 0;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
+  }
+
+  #open ~ .links a,
+  #open ~ .links button {
+    border: 1px solid $primary;
+    z-index: 100;
+    height: 2em;
+    padding: 0.2em;
+    transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
+  }
+  .links > a,
+  .links > button {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0.5em 0;
+    width: 100%;
+    color: $white;
+    background-color: $primary;
+  }
+}

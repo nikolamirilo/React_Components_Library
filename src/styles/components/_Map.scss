@@ -1,0 +1,14 @@
+.map {
+  iframe {
+    width: 70vw;
+    height: 60vh;
+    border: none;
+    border-radius: 20px;
+    padding: 0;
+    @include media($sm) {
+      width: 100%;
+      width: 96vw;
+      border-radius: 0px;
+    }
+  }
+}

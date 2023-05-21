@@ -1,0 +1,115 @@
+@mixin flex($direction, $justifyContent, $alignItems) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justifyContent;
+  align-items: $alignItems;
+}
+@mixin buttonStyle {
+  padding: 0.2rem 2rem;
+  background-color: $secondary;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: $buttonFS;
+  &:hover {
+    outline: transparent;
+  }
+  &:focus {
+    outline: transparent;
+  }
+}
+@mixin linkStyle {
+  font-size: $linkFS;
+  cursor: pointer;
+  transition: transform 0.1s ease-in-out;
+  text-decoration: none;
+  color: $black;
+  &:hover {
+    transform: scale(1.1);
+    text-decoration: none;
+  }
+}
+@mixin pagePadding {
+  padding: 5vh 5vw;
+}
+@mixin color($color: blue) {
+  color: $color;
+}
+@mixin layoutSectionStyle {
+  width: 100%;
+  padding: 0 5vw;
+  background-color: $primary;
+  color: $white;
+  @include media($xs) {
+    padding: 0 4vw;
+  }
+}
+
+@mixin sectionStyle {
+  width: 100%;
+  padding: 5vh 5vw;
+  @include media($xs) {
+    padding: 5vh 2vw;
+  }
+}
+@mixin media($breakpoint) {
+  @media screen and (max-width: $breakpoint) {
+    @content;
+  }
+}
+@mixin backgroundObjectImage($width, $height) {
+  background-position: center;
+  background-size: cover;
+  width: $width;
+  height: $height;
+}
+@mixin grid($templateColumns) {
+  display: grid;
+  grid-template-columns: $templateColumns;
+}
+@mixin contentPadding {
+  padding: 10vh 5vw;
+  @include media($xs) {
+    padding: 10vh 3vw;
+  }
+}
+@mixin fadeAnimation($duration, $delay) {
+  opacity: 0;
+  animation: fade $duration ease-in $delay forwards;
+}
+@mixin slideInAnimation($duration, $delay) {
+  opacity: 0;
+  animation: slideIn $duration ease-in-out $delay forwards;
+}
+@mixin boxShadow {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+}
+@mixin cardsContainerStyle {
+  @include contentPadding;
+  @include flex(row, space-evenly, center);
+  gap: 1.5%;
+  flex-wrap: wrap;
+  width: 100%;
+  row-gap: 5vh;
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  0% {
+    position: relative;
+    left: -10vw;
+    opacity: 0;
+  }
+  100% {
+    position: relative;
+    left: 0vw;
+    opacity: 1;
+  }
+}

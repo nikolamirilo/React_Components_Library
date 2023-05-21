@@ -1,0 +1,6 @@
+.contact {
+  @include flex(column, center, center);
+  @include sectionStyle;
+  gap: 10vh;
+  @include fadeAnimation(0.5s, 0.1s);
+}
