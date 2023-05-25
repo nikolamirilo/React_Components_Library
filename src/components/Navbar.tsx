@@ -1,15 +1,13 @@
+"use client";
 import { i18n } from "next-i18next";
 import Image from "next/image";
 import Link from "next/link";
-import { useRouter } from "next/router";
 import React, { useState } from "react";
 import logo from "../../public/images/logo.png";
+import { useGeneralContext } from "@/context/GeneralContext";
 
 const Navbar: React.FC = () => {
-  const router = useRouter();
-  const { route, asPath, query } = router;
   const [isOpen, setIsOpen] = useState(false);
-
   async function handleChangeLanguage(lang: string) {
     if (i18n) {
       i18n.changeLanguage(lang);

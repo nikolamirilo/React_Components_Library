@@ -1,3 +1,4 @@
+"use client";
 import { AuthFormProps } from "@/typescript/interfaces/components";
 import React from "react";
 

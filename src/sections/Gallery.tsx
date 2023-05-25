@@ -1,3 +1,4 @@
+"use client";
 import Image from "next/image";
 import React, { useRef } from "react";
 import { Autoplay, EffectFade, Navigation, Pagination } from "swiper";

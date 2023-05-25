@@ -1,3 +1,4 @@
+"use client";
 import AddNewProduct from "@/components/AddNewProduct";
 import Hero from "@/sections/Hero";
 import Products from "@/sections/Products";
@@ -20,7 +21,7 @@ import useSWR from "swr";
 // }
 
 const Home: React.FC<HomeProps> = () => {
-  const { allProducts, isLoading } = useProductsContext();
+  const { allProducts } = useProductsContext();
   return (
     <>
       <Head>
@@ -35,7 +36,7 @@ const Home: React.FC<HomeProps> = () => {
           image={background.src}
         />
         <AddNewProduct />
-        <Products data={allProducts} isLoading={isLoading} />
+        <Products data={allProducts} />
         <Suspense fallback="">
           <About />
         </Suspense>

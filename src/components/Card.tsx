@@ -1,14 +1,13 @@
+"use client";
 import { CardProps } from "@/typescript/interfaces/components";
-import { useRouter } from "next/navigation";
 import React from "react";
 
 const Card: React.FC<CardProps> = ({ title, subtitle, price, id }) => {
-  const router = useRouter();
   return (
     <div
       className="card"
       onClick={() => {
-        router.push(`/products/${id}`);
+        window.location.href = `/products/${id}`;
       }}
     >
       <div className="card-text">

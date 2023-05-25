@@ -1,14 +1,10 @@
+"use client";
 import { CarouselProps } from "@/typescript/interfaces/components";
 import Image from "next/image";
 import React from "react";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 
-const Carousel: React.FC<CarouselProps> = ({
-  index,
-  slides,
-  handleNextSlide,
-  handlePreviousSlide,
-}) => {
+const Carousel: React.FC<CarouselProps> = ({ index, slides, handleNextSlide, handlePreviousSlide }) => {
   return (
     <div className="carousel">
       {slides.map((slide, idx) => {

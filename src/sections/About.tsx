@@ -1,7 +1,7 @@
 import { useTranslation } from "next-i18next";
 import Image from "next/image";
 import React from "react";
-import BW from "../../public/images/BW.webp";
+import city from "../../public/images/city.jpeg";
 
 const About: React.FC = () => {
   return (
@@ -14,7 +14,7 @@ const About: React.FC = () => {
         </p>
       </div>
       <div className="image">
-        <Image src={BW} alt="Belgrade" />
+        <Image src={city} alt="Belgrade" />
       </div>
     </section>
   );

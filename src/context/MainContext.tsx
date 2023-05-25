@@ -1,3 +1,4 @@
+"use client";
 import React, { createContext, useContext } from "react";
 import GeneralContextProvider from "./GeneralContext";
 import ProductsContextProvider from "./ProductsContext";

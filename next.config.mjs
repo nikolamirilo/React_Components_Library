@@ -1,4 +1,7 @@
 const nextConfig = {
+  experimental: {
+    appDir: true,
+  },
   modularizeImports: {
     "react-icons": {
       transform: "react-icons/{{member}}",
