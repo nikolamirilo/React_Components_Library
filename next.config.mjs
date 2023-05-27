@@ -7,6 +7,18 @@ const nextConfig = {
       transform: "react-icons/{{member}}",
     },
   },
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "images.unsplash.com",
+      },
+      {
+        protocol: "https",
+        hostname: "assets.stickpng.com",
+      },
+    ],
+  },
   env: {
     MONGODB_URI: "mongodb+srv://nikolamirilo:veslanje123@cluster0.phoutob.mongodb.net/",
   },

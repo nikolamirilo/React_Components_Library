@@ -25,10 +25,16 @@
   margin: 0 1rem;
   overflow: hidden;
   @include linkStyle;
+  @include flex(row, center, center);
   color: $white;
+
   &:hover {
     color: $secondary;
   }
+}
+.links a img {
+  border-radius: 100%;
+  border: 1px solid $secondary;
 }
 .links button {
   background-color: transparent;

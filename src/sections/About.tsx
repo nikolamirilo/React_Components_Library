@@ -1,4 +1,4 @@
-import { useTranslation } from "next-i18next";
+"use client";
 import Image from "next/image";
 import React from "react";
 import city from "../../public/images/city.jpeg";

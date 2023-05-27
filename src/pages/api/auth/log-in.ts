@@ -1,4 +1,4 @@
-import { checkIfUserIsAuthenticated } from "@/utils/backend/auth";
+import { logIn } from "@/utils/backend/auth";
 import { NextApiRequest, NextApiResponse } from "next";
 
 //! Route for Log-In
@@ -7,12 +7,14 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   try {
     const { method, body } = req;
     if (method === "POST") {
-      const { username } = body; // Extract the username from req.body
-      let isUserAuthorized = await checkIfUserIsAuthenticated(username);
+      const { username, password } = body; // Extract the username from req.body
+      res.setHeader("Content-Type", "application/json");
+      res.setHeader("Cache-Control", "max-age=180000");
+      const isUserAuthorized = await logIn(username, password);
       if (isUserAuthorized) {
-        res.json({ message: `User ${username} is Authorized` });
+        res.status(200).json({ message: `User ${username} is Authorized` });
       } else {
-        res.json({ message: `User ${username} is Not Authorized` });
+        res.status(401).json({ message: `User ${username} is Not Authorized` });
       }
     }
   } catch (error) {

@@ -1,5 +1,5 @@
 "use client";
-import React, { createContext, useContext, useState } from "react";
+import React, { createContext, useContext, useReducer } from "react";
 
 const AuthContext = createContext(null);
 
@@ -8,11 +8,19 @@ export const useAuthContext = () => {
 };
 
 const AuthContextProvider = ({ children }: { children: React.ReactNode }) => {
-  const [user, setUser] = useState({
-    username: "nikola.mirilo",
+  const initialUserState = {
+    username: "",
+    password: "",
     image:
-      "https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8dXNlcnN8ZW58MHx8MHx8&w=1000&q=80",
-  });
+      "https://assets.stickpng.com/thumbs/585e4beacb11b227491c3399.png",
+  };
+  const [user, setUser] = useReducer(
+    (user, updates) => ({
+      ...user,
+      ...updates,
+    }),
+    initialUserState
+  );
   return <AuthContext.Provider value={{ user, setUser }}>{children}</AuthContext.Provider>;
-}
+};
 export default AuthContextProvider;

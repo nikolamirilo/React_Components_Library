@@ -17,9 +17,11 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
     <html lang="en">
       <body>
         <MainContextProvider>
-          <Navbar />
-          {children}
-          <Footer />
+          <>
+            <Navbar />
+            {children}
+            <Footer />
+          </>
         </MainContextProvider>
       </body>
     </html>

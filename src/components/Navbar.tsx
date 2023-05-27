@@ -3,10 +3,11 @@ import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
 import logo from "../../public/images/logo.png";
-import { useGeneralContext } from "@/context/GeneralContext";
+import { useAuthContext } from "@/context/AuthContext";
 
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const { user } = useAuthContext();
   return (
     <nav className="navbar">
       <div className="logo">
@@ -65,6 +66,9 @@ const Navbar: React.FC = () => {
           }}
         >
           Contact
+        </Link>
+        <Link href={`/users/${user.username}`}>
+          <Image src={user.image} width={50} height={50} alt="User Image" />
         </Link>
       </div>
     </nav>
