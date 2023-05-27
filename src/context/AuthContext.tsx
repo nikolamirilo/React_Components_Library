@@ -7,7 +7,7 @@ export const useAuthContext = () => {
   return useContext(AuthContext);
 };
 
-export default function AuthContextProvider({ children }: { children: React.ReactNode }) {
+const AuthContextProvider = ({ children }: { children: React.ReactNode }) => {
   const [user, setUser] = useState({
     username: "nikola.mirilo",
     image:
@@ -15,3 +15,4 @@ export default function AuthContextProvider({ children }: { children: React.Reac
   });
   return <AuthContext.Provider value={{ user, setUser }}>{children}</AuthContext.Provider>;
 }
+export default AuthContextProvider;

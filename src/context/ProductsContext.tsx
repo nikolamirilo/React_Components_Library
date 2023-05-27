@@ -8,7 +8,7 @@ export const useProductsContext = () => {
   return useContext(ProductsContext);
 };
 
-export default function ProductsContextProvider({ children }: { children: React.ReactNode }) {
+const ProductsContextProvider = ({ children }: { children: React.ReactNode }) => {
   const fetcher = (url: any) => fetch(url).then((res) => res.json());
   const {
     data: allProducts,
@@ -16,4 +16,5 @@ export default function ProductsContextProvider({ children }: { children: React.
     isLoading,
   } = useSWR("http://localhost:3000/api/products", fetcher, { revalidateOnMount: true });
   return <ProductsContext.Provider value={{ allProducts, isLoading, error }}>{children}</ProductsContext.Provider>;
-}
+};
+export default ProductsContextProvider;

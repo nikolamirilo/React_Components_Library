@@ -10,7 +10,17 @@ const Products: React.FC<ProductsProps> = ({ data }) => {
       <div className="cards-container">
         {data
           ? data.allProducts.map((item, idx) => {
-              return <Card key={idx} id={item._id} title={item.title} subtitle={item.description} price={item.price} />;
+              return (
+                <Card
+                  key={idx}
+                  id={item._id}
+                  title={item.title}
+                  subtitle={item.description}
+                  price={item.price}
+                  location={item?.location}
+                  user={item.user?.username}
+                />
+              );
             })
           : null}
       </div>

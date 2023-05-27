@@ -7,6 +7,7 @@ export const useGeneralContext = () => {
   return useContext(GeneralContext);
 };
 
-export default function GeneralContextProvider({ children }: { children: React.ReactNode }) {
+const GeneralContextProvider = ({ children }: { children: React.ReactNode }) => {
   return <GeneralContext.Provider value={{}}>{children}</GeneralContext.Provider>;
-}
+};
+export default GeneralContextProvider;

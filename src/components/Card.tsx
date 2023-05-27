@@ -2,7 +2,7 @@
 import { CardProps } from "@/typescript/interfaces/components";
 import React from "react";
 
-const Card: React.FC<CardProps> = ({ title, subtitle, price, id }) => {
+const Card: React.FC<CardProps> = ({ title, subtitle, price, user, location, id }) => {
   return (
     <div
       className="card"
@@ -14,6 +14,8 @@ const Card: React.FC<CardProps> = ({ title, subtitle, price, id }) => {
         <h2>{title}</h2>
         <p>{subtitle}</p>
         <span>{price}$</span>
+        <p>Location: {location}</p>
+        {user ? <p>User: @{user}</p> : null}
       </div>
     </div>
   );

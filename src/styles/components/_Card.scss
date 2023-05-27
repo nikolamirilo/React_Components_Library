@@ -3,10 +3,10 @@
   gap: 0.5rem;
   width: fit-content;
   border-radius: 10px;
-  padding-bottom: 0.5rem;
+  padding: 1rem;
   @include boxShadow;
   width: 400px;
-  min-height: 350px;
+  min-height: 500px;
   height: fit-content;
   cursor: pointer;
   img {

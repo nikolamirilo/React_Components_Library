@@ -2,6 +2,7 @@
 import { useAuthContext } from "@/context/AuthContext";
 import axios from "axios";
 import React, { useReducer } from "react";
+
 const AddNewProduct: React.FC = () => {
   const { user } = useAuthContext();
   const initialProductState = {

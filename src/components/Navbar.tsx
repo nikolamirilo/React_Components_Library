@@ -1,5 +1,4 @@
 "use client";
-import { i18n } from "next-i18next";
 import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
@@ -8,13 +7,6 @@ import { useGeneralContext } from "@/context/GeneralContext";
 
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
-  async function handleChangeLanguage(lang: string) {
-    if (i18n) {
-      i18n.changeLanguage(lang);
-      await router.push({ pathname: route, query }, asPath, { locale: lang });
-      window.location.reload();
-    }
-  }
   return (
     <nav className="navbar">
       <div className="logo">

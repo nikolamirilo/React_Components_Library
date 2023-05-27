@@ -1,6 +1,6 @@
 "use client";
 
-export default function GlobalError({ error, reset }: { error: Error; reset: () => void }) {
+const GlobalError = ({ error, reset }: { error: Error; reset: () => void }) => {
   return (
     <html>
       <body>
@@ -9,4 +9,5 @@ export default function GlobalError({ error, reset }: { error: Error; reset: () 
       </body>
     </html>
   );
-}
+};
+export default GlobalError;

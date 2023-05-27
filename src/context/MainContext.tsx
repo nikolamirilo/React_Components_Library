@@ -10,7 +10,7 @@ export const useMainContext = () => {
   return useContext(MainContext);
 };
 
-export default function MainContextProvider({ children }: { children: React.ReactNode }) {
+const MainContextProvider = ({ children }: { children: React.ReactNode }) => {
   return (
     <MainContext.Provider value="">
       <AuthContextProvider>
@@ -20,4 +20,5 @@ export default function MainContextProvider({ children }: { children: React.Reac
       </AuthContextProvider>
     </MainContext.Provider>
   );
-}
+};
+export default MainContextProvider;

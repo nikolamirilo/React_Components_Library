@@ -13,13 +13,6 @@ const About = dynamic(() => import("@/sections/About"), { suspense: true });
 const Gallery = dynamic(() => import("@/sections/Gallery"), { suspense: true });
 import useSWR from "swr";
 
-// export async function getServerSideProps({ req, res }) {
-//   res.setHeader("Cache-Control", "public, s-maxage=10, stale-while-revalidate=59");
-//   return {
-//     props: {},
-//   };
-// }
-
 const Home: React.FC<HomeProps> = () => {
   const { allProducts } = useProductsContext();
   return (

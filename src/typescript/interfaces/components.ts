@@ -5,7 +5,9 @@ export interface CardProps {
   title: string;
   subtitle: string;
   price: string;
+  user: string;
   id: string;
+  location: string;
 }
 export interface CarouselProps {
   slides: StaticImageData[];
