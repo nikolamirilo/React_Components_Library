@@ -1,5 +1,5 @@
 "use client";
-import { SingleProductProps } from "@/typescript/interfaces/pages";
+import { Product, initialProductState } from "@/typescript/types/types";
 import React, { useEffect, useState } from "react";
 
 export async function getData(id: string) {
@@ -7,8 +7,8 @@ export async function getData(id: string) {
   return response.json();
 }
 
-const SingleProduct: React.FC<SingleProductProps> = ({ params }) => {
-  const [singleProduct, setSingleProduct] = useState(null);
+const SingleProduct: React.FC = ({ params }: {params:{id:string}}) => {
+  const [singleProduct, setSingleProduct] = useState<Product>(initialProductState);
 
   useEffect(() => {
     async function fetchData() {

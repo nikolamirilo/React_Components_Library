@@ -1,4 +1,6 @@
-const Loading = () => {
-  return <main>Loading.....</main>;
+import React from "react";
+
+const Loading:React.FC = () => {
+  return <main id="loading"></main>;
 };
 export default Loading;

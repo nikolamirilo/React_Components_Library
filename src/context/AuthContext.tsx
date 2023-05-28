@@ -1,18 +1,15 @@
 "use client";
+import { GeneralContextProviderProps, User, initialUserState } from "@/typescript/types/types";
 import React, { createContext, useContext, useEffect, useReducer } from "react";
 
-const AuthContext = createContext(null);
+const AuthContext = createContext({});
 
 export const useAuthContext = () => {
   return useContext(AuthContext);
 };
 
-const AuthContextProvider = ({ children }: { children: React.ReactNode }) => {
-  const initialUserState = {
-    username: "",
-    password: "",
-    image: "https://assets.stickpng.com/thumbs/585e4beacb11b227491c3399.png",
-  };
+
+const AuthContextProvider:React.FC<GeneralContextProviderProps> = ({ children }) => {
   const [user, setUser] = useReducer(
     (user, updates) => ({
       ...user,

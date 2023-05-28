@@ -1,14 +1,15 @@
 "use client";
+import { GeneralContextProviderProps } from "@/typescript/types/types";
 import React, { createContext, useContext } from "react";
 import useSWR from "swr";
 
-const ProductsContext = createContext(null);
+const ProductsContext = createContext({});
 
 export const useProductsContext = () => {
   return useContext(ProductsContext);
 };
 
-const ProductsContextProvider = ({ children }: { children: React.ReactNode }) => {
+const ProductsContextProvider:React.FC<GeneralContextProviderProps> = ({ children }) => {
   const fetcher = (url: any) => fetch(url).then((res) => res.json());
   const {
     data: allProducts,

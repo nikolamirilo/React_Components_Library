@@ -7,6 +7,7 @@ const nextConfig = {
       transform: "react-icons/{{member}}",
     },
   },
+  swcMinify: false,
   images: {
     remotePatterns: [
       {
