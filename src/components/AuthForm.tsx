@@ -6,9 +6,13 @@ const AuthForm: React.FC<AuthFormProps> = ({
   type,
   handleSubmitForm,
   username,
-  password,
   handleUsernameChange,
+  email,
+  handleEmailChange,
+  password,
   handlePasswordChange,
+  confirmPassword,
+  handleConfirmPasswordChange,
 }) => {
   return (
     <form className="auth-form">
@@ -20,6 +24,15 @@ const AuthForm: React.FC<AuthFormProps> = ({
         value={username}
         onChange={handleUsernameChange}
       />
+      {type === "sign-up" ? (
+        <input
+          type="email"
+          className="email"
+          placeholder="Enter your email*"
+          value={email}
+          onChange={handleEmailChange}
+        />
+      ) : null}
       <input
         type="password"
         className="password"
@@ -27,6 +40,16 @@ const AuthForm: React.FC<AuthFormProps> = ({
         value={password}
         onChange={handlePasswordChange}
       />
+      {type === "sign-up" ? (
+        <input
+          type="password"
+          className="confirm-password"
+          placeholder="Confirm your password*"
+          value={confirmPassword}
+          onChange={handleConfirmPasswordChange}
+        />
+      ) : null}
+
       <button className="login-button" onClick={handleSubmitForm}>
         Log In
       </button>

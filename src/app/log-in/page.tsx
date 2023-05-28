@@ -1,10 +1,8 @@
 "use client";
-import { useReducer } from "react";
 import AuthForm from "@/components/AuthForm";
-import axios from "axios";
-import React from "react";
 import { useAuthContext } from "@/context/AuthContext";
-import { useRouter } from "next/router";
+import axios from "axios";
+import React, { useReducer } from "react";
 
 const LogIn: React.FC = () => {
   const { setUser, user } = useAuthContext();

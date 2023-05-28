@@ -18,6 +18,14 @@ export interface CarouselProps {
 export interface AuthFormProps {
   type: string;
   handleSubmitForm(): void;
+  username: string;
+  handleUsernameChange(): void;
+  email: string;
+  handleEmailChange(): void;
+  password: string;
+  handlePasswordChange(): void;
+  confirmPassword: string;
+  handleConfirmPasswordChange(): void;
 }
 export interface FormProps {}
 export interface OfferCardProps {
