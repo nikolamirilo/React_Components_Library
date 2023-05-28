@@ -24,9 +24,11 @@ const LogIn: React.FC = () => {
     console.log(credentials);
     axios
       .post("http://localhost:3000/api/auth/log-in", credentials)
-      .then(function (response) {
+      .then(async function (response) {
         console.log(response);
         setUser({ username: credentials.username });
+        await localStorage.setItem("currentUser", credentials.username);
+        window.location.href = "/";
       })
       .catch(function (error) {
         alert("Username or Password Incorrect");
