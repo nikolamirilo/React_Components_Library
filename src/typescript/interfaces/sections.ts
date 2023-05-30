@@ -1,4 +1,4 @@
-import { Product } from "../types/types";
+import { Product } from "../interfaces/entities";
 
 export interface ProductsProps {
   data: {

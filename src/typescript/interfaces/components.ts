@@ -1,5 +1,4 @@
 import type { StaticImageData } from "next/image";
-import React from "react";
 
 export interface CardProps {
   title: string;
@@ -17,15 +16,15 @@ export interface CarouselProps {
 }
 export interface AuthFormProps {
   type: string;
-  handleSubmitForm(): void;
+  handleSubmitForm(e:any): void;
   username: string;
-  handleUsernameChange(): void;
-  email: string;
-  handleEmailChange(): void;
+  handleUsernameChange(e:any): void;
+  email?: string;
+  handleEmailChange?(e:any): void;
   password: string;
-  handlePasswordChange(): void;
-  confirmPassword: string;
-  handleConfirmPasswordChange(): void;
+  handlePasswordChange(e:any): void;
+  confirmPassword?: string;
+  handleConfirmPasswordChange?(e:Event): void;
 }
 export interface FormProps {}
 export interface OfferCardProps {

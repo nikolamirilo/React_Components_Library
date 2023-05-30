@@ -1,11 +1,11 @@
 import clientPromise from "@/lib/mongodb";
-import { ObjectId } from "mongodb";
+import { Product, Products } from "@/typescript/interfaces/entities";
 
 export const getAllProducts = async () => {
   try {
     const client = await clientPromise;
     const db = client.db("Used_Cars");
-    const allProducts = (await db.collection("products").find({}).toArray()).sort((a, b) => a.id - b.id);
+    const allProducts: Products = (await db.collection("products").find({}).toArray()).sort((a, b) => a.id - b.id);
     const length = allProducts.length;
     return { allProducts, length };
   } catch (error) {
@@ -25,14 +25,14 @@ export const deleteAllProducts = async () => {
 export const getSingleProduct = async (id: string) => {
   try {
     const { allProducts } = await getAllProducts();
-    const singleProduct = allProducts.find((singleProduct) => singleProduct._id.toString() === id);
+    const singleProduct: Product = allProducts.find((singleProduct:Product) => singleProduct._id.toString() === id);
     return { singleProduct };
   } catch (error) {
     console.log(error.message);
   }
 };
 
-export const addNewProduct = async (product: object) => {
+export const addNewProduct = async (product:Product) => {
   try {
     const client = await clientPromise;
     const db = client.db("Used_Cars");
@@ -60,8 +60,7 @@ export const updateProduct = async (productInputData, productId) => {
         $set: {
           title: productInputData.title,
         },
-      },
-      { returnOriginal: false }
+      }
     );
   } catch (error) {
     console.log(error.message);
