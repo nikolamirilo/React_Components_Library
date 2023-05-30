@@ -17,6 +17,7 @@
     "@types/react-dom": "18.0.10",
     "axios": "^1.4.0",
     "eslint": "8.33.0",
+    "firebase": "^9.22.1",
     "mongodb": "^5.5.0",
     "next": "^13.4.5-canary.0",
     "react": "^18.2.0",

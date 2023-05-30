@@ -32,7 +32,7 @@ export const getSingleProduct = async (id: string) => {
   }
 };
 
-export const addNewProduct = async (product:Product) => {
+export const addNewProduct = async (product:string) => {
   try {
     const client = await clientPromise;
     const db = client.db("Used_Cars");
@@ -41,7 +41,7 @@ export const addNewProduct = async (product:Product) => {
     console.log(error.message);
   }
 };
-export const deleteProduct = async (productId: string) => {
+export const deleteProduct = async (productId:string ) => {
   try {
     const client = await clientPromise;
     const db = client.db("Used_Cars");
@@ -54,7 +54,7 @@ export const updateProduct = async (productInputData, productId) => {
   try {
     const client = await clientPromise;
     const db = client.db("Used_Cars");
-    const result = await db.collection("products").updateOne(
+    await db.collection("products").updateOne(
       { _id: productId },
       {
         $set: {

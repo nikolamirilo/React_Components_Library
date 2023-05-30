@@ -1,6 +1,7 @@
 "use client";
 import { User, initialUserState } from "@/typescript/interfaces/entities";
 import { GeneralContextProviderProps } from "@/typescript/types/types";
+import { auth } from "@/utils/firebase";
 import React, { createContext, useContext, useEffect, useReducer } from "react";
 
 const AuthContext = createContext({});
@@ -17,6 +18,19 @@ const AuthContextProvider: React.FC<GeneralContextProviderProps> = ({ children }
         }),
         initialUserState as User
     );
+
+    const unsubscribe = auth.onAuthStateChanged((firebaseUser) => {
+        if (firebaseUser) {
+            console.log(firebaseUser);
+            setUser({ username: firebaseUser._delegate.displayName });
+        } else {
+            console.log("User is signed out");
+        }
+    });
+
+    useEffect(() => {
+        unsubscribe();
+    }, []);
 
     useEffect(() => {
         const currentUser = localStorage.getItem("currentUser");

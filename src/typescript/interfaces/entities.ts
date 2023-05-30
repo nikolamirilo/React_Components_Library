@@ -27,6 +27,6 @@ export const initialProductState: Product = {
   user: initialUserState
 };
   export interface Products{
-    allProducts: Product[] | undefined;
-    length: number;
+    allProducts?: Product[] | undefined;
+    length?: number;
   }
