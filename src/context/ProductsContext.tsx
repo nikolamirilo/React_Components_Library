@@ -12,11 +12,11 @@ export const useProductsContext = () => {
 const ProductsContextProvider: React.FC<GeneralContextProviderProps> = ({ children }) => {
     const fetcher = (url: any) => fetch(url).then((res) => res.json());
     const {
-        data: allProducts,
+        data: products,
         error,
         isLoading,
     } = useSWR("http://localhost:3000/api/products", fetcher, { revalidateOnMount: true });
-    console.log(allProducts);
-    return <ProductsContext.Provider value={{ allProducts, isLoading, error }}>{children}</ProductsContext.Provider>;
+    console.log(products);
+    return <ProductsContext.Provider value={{ products, isLoading, error }}>{children}</ProductsContext.Provider>;
 };
 export default ProductsContextProvider;

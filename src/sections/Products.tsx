@@ -6,7 +6,7 @@ import React from "react";
 const Products: React.FC<ProductsProps> = ({ data }) => {
   return (
     <section id="products">
-      <h1>Products</h1>
+      <h1>{data && Products}</h1>
       <div className="cards-container">
         {data
           ? data.allProducts.map((item, idx) => {
