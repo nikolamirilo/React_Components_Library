@@ -7,7 +7,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   try {
     const { method, body } = req;
     const { title } = body;
-    // res.setHeader("Cache-Control", "s-maxage=86400");
+    res.setHeader("Cache-Control", "s-maxage=86400");
     //* Process a POST request - create new product
     switch (method) {
       case "POST":

@@ -1,4 +1,4 @@
-import { deleteAllProducts, getAllProducts } from "@/utils/backend/products";
+import { deleteAllProducts, getProducts } from "@/utils/backend/products";
 import type { NextApiRequest, NextApiResponse } from "next";
 
 //!Route for getting All Products from Database
@@ -8,8 +8,8 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   try {
     switch (method) {
       case "GET":
-        const { allProducts } = await getAllProducts();
-        res.status(200).json({ allProducts });
+        const {allProducts, expensiveProducts}  = await getProducts();
+        res.status(200).json({ allProducts, expensiveProducts });
         break;
       case "DELETE":
         await deleteAllProducts();
@@ -20,6 +20,6 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         break;
     }
   } catch (error) {
-    res.status(500).json({ message: error.message });
+    res.status(500).json({ message: (error as Error).message });
   }
 }

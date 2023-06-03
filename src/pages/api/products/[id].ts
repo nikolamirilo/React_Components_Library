@@ -18,7 +18,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
           break;
         case "PUT":
           //* Process a PUT request - update existing product
-          await updateProduct({ title }, id);
+          await updateProduct(title, id);
           res.status(200).json("PUT request of product " + id);
           break;
         case "DELETE":
@@ -31,6 +31,6 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       }
     }
   } catch (error) {
-    res.status(500).json({ message: error.message });
+    res.status(500).json({ message: (error as Error).message });
   }
 }
