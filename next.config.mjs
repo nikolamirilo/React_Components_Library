@@ -1,7 +1,4 @@
 const nextConfig = {
-  experimental: {
-    appDir: true,
-  },
   modularizeImports: {
     "react-icons": {
       transform: "react-icons/{{member}}",
@@ -17,6 +14,10 @@ const nextConfig = {
       {
         protocol: "https",
         hostname: "assets.stickpng.com",
+      },
+      {
+        protocol: "https",
+        hostname: "th.bing.com",
       },
     ],
   },
